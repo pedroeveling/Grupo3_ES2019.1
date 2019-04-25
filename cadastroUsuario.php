@@ -22,7 +22,7 @@
     <script language="JavaScript">
         function mascara(t, mask)
         {
-            var i = t.value.length;                
+            var i = t.value.length;
             var saida = mask.substring(1,0);
             var texto = mask.substring(i)
             if (texto.substring(0,1) != saida)
@@ -58,6 +58,13 @@
             <div class="form-group col-md-2">
             <label for="inputPassword4">CPF</label>
             <input type="text" name="cpf" class="form-control" id="inputCPF4" placeholder="111.111.111-11" onkeypress="mascara(this, '###.###.###-##')"  maxlength="14">
+            </div>
+            <div class="form-group col-md-2">
+            <label for="inputPassword4">Tipo</label>
+            <select name="tipo">
+                <option value="Cliente" selected="true">Cliente</option>
+                <option value="Funcionario" disabled="disabled">Funcionário</option>
+            </select>
             </div>
         </div>
     </fieldset>
@@ -129,13 +136,14 @@
         $nome = $_POST['nome'];
         $telefone = $_POST['telefone'];
         $cpf = $_POST['cpf'];
+        $tipo = $_POST['tipo'];
         $endereco = $_POST['endereco'];
         $complemento = $_POST['complemento'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
         $cep = $_POST['cep'];
 
-        $sql = "insert into usuarios (email,senha,nome,telefone,cpf,endereco,complemento,cidade,estado,cep) values ('$email','$senha','$nome','$telefone','$cpf','$endereco','$complemento','$cidade','$estado','$cep')";
+        $sql = "insert into usuarios (email,senha,nome,telefone,cpf,tipo,endereco,complemento,cidade,estado,cep) values ('$email','$senha','$nome','$telefone','$cpf','$endereco','$complemento','$cidade','$estado','$cep')";
         $salvar = mysqli_query($conexao,$sql);/* Escreve os dados no banco */
 
         if($salvar)
@@ -151,9 +159,9 @@
             <div class="alert alert-warning">Falha ao cadastrar usuário!</div>
             <?php
         }
-    
+
         mysqli_close($conexao);
-    
+
     }
 
     ?>

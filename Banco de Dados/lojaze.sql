@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nome` varchar(40) CHARACTER SET latin1 NOT NULL,
   `telefone` varchar(12) NOT NULL,
   `cpf` varchar(14) NOT NULL,
+  `tipo` varchar(12) NOT NULL,
   `endereco` varchar(40) CHARACTER SET latin1 NOT NULL,
   `complemento` varchar(40) CHARACTER SET latin1 DEFAULT NULL,
   `cidade` varchar(40) CHARACTER SET latin1 NOT NULL,
