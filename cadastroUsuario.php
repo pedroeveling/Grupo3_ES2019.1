@@ -143,7 +143,7 @@
         $estado = $_POST['estado'];
         $cep = $_POST['cep'];
 
-        $sql = "insert into usuarios (email,senha,nome,telefone,cpf,tipo,endereco,complemento,cidade,estado,cep) values ('$email','$senha','$nome','$telefone','$cpf','$endereco','$complemento','$cidade','$estado','$cep')";
+        $sql = "insert into usuarios (email,senha,nome,telefone,cpf,tipo,endereco,complemento,cidade,estado,cep) values ('$email','$senha','$nome','$telefone','$cpf','$tipo','$endereco','$complemento','$cidade','$estado','$cep')";
         $salvar = mysqli_query($conexao,$sql);/* Escreve os dados no banco */
 
         if($salvar)
