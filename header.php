@@ -18,6 +18,9 @@
       <li class="nav-item">
         <a class="nav-link" href="listaUsuarios.php">Listar Usuários</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="listaNomeEmail.php">Exibir nomes e emails dos usuários</a>
+      </li>
     </ul>
   </div>
   <!--Links do Menu-->

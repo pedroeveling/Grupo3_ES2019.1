@@ -19,7 +19,7 @@
 <body>
 
     <hr>
-    <h1>Aqui está o corpo do Site!</h1>
+    <h1>Lojão do Zé</h1>
     <hr>
     <!-- Carrossel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -27,7 +27,7 @@
             <div class="carousel-item active">
                 <img class="imagem" src="publico/imagens/logo.png" alt="Primeiro slide">
             </div>
-            
+
             <div class="carousel-item">
                 <img class="imagem" src="publico/imagens/produto.jpg" alt="Segundo slide">
             </div>
@@ -39,7 +39,7 @@
             <div class="carousel-item">
                 <img class="imagem" src="publico/imagens/produto3.jpg" alt="Quarto slide">
             </div>
-            
+
             <div class="carousel-item">
                 <img class="imagem" src="publico/imagens/produto4.jpg" alt="Quinto slide">
             </div>
