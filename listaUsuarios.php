@@ -17,19 +17,19 @@
 
 <body>
   <hr>
-  <table class="tabelaUsuarios" border="1">
-    <thead>
+  <table class="table table-bordered">
+    <thead class="thead-dark">
       <tr>
-        <th>Email</th>
-        <th>Nome</th>
-        <th>Telefone</th>
-        <th>CPF</th>
-        <th>Tipo</th>
-        <th>Endereco</th>
-        <th>Complemento</th>
-        <th>Cidade</th>
-        <th>Estado</th>
-        <th>CEP</th>
+        <th scope="col">Email</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Endereco</th>
+        <th scope="col">Complemento</th>
+        <th scope="col">Cidade</th>
+        <th scope="col">Estado</th>
+        <th scope="col">CEP</th>
       </tr>
     </thead>
     <?php
@@ -48,6 +48,7 @@
         $estado = $usuarios[9];
         $cep = $usuarios[10];
 
+        echo "<tr scope='row'>";
         echo "<td>$email</td>";
         echo "<td>$nome</td>";
         echo "<td>$telefone</td>";
@@ -58,6 +59,7 @@
         echo "<td>$cidade</td>";
         echo "<td>$estado</td>";
         echo "<td>$cep</td>";
+        echo "</tr>";
       }
       mysqli_close($conexao);
     ?>
