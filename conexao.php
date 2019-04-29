@@ -1,14 +1,10 @@
 <?php
 
-$hostname = "127.0.0.1";;
-$user = "root";
-$password = "";
-$database = "lojaze";
-$conexao = mysqli_connect($hostname, $user, $password, $database);/* Estabelece a conexão */
+$conexao = mysqli_connect("localhost", "root", "", "usuarios");/* Estabelece a conexão */
 
 if(!$conexao)
 {
-    echo "Falha na conexão com o BD!";/* Exibe uma mensagem de erro caso a conexão falhe */
+    echo "FALHA DE CONEXÃO!!!";/* Exibe uma mensagem de erro caso a conexão falhe */
 }
 
 

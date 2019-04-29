@@ -16,54 +16,50 @@
 ?>
 
 <body>
-  <hr>
-  <table class="table table-bordered">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Email</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Telefone</th>
-        <th scope="col">CPF</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Endereco</th>
-        <th scope="col">Complemento</th>
-        <th scope="col">Cidade</th>
-        <th scope="col">Estado</th>
-        <th scope="col">CEP</th>
-      </tr>
-    </thead>
-    <?php
-      include_once("conexao.php");/* Estabelece a conexão */
-      $sql = "select * from lojaze.usuarios";
-      $consulta = mysqli_query($conexao, $sql);
-      while ($usuarios = mysqli_fetch_array($consulta)){
-        $email = $usuarios[0];
-        $nome = $usuarios[2];
-        $telefone = $usuarios[3];
-        $cpf = $usuarios[4];
-        $tipo = $usuarios[5];
-        $endereco = $usuarios[6];
-        $complemento = $usuarios[7];
-        $cidade = $usuarios[8];
-        $estado = $usuarios[9];
-        $cep = $usuarios[10];
+  
+<hr><br>
 
-        echo "<tr scope='row'>";
-        echo "<td>$email</td>";
-        echo "<td>$nome</td>";
-        echo "<td>$telefone</td>";
-        echo "<td>$cpf</td>";
-        echo "<td>$tipo</td>";
-        echo "<td>$endereco</td>";
-        echo "<td>$complemento</td>";
-        echo "<td>$cidade</td>";
-        echo "<td>$estado</td>";
-        echo "<td>$cep</td>";
-        echo "</tr>";
-      }
-      mysqli_close($conexao);
-    ?>
-  </table>
+
+    <div>
+        
+        <div>
+            
+            <h5>Usuários cadastrados:</h5>
+
+            <table>
+                
+                <thead>
+                    
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Tipo</th>
+
+                </thead>
+
+                <tbody>
+                    
+                    <?php
+
+                        include_once('banco/read.php')
+
+                    ?>
+
+                </tbody>
+
+            </table>
+
+
+
+        </div>
+
+    </div>
+
+
+
+<br><hr>
+
 </body>
 
 <?php

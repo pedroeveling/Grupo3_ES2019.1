@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,7 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cadastro de Usuário</title>
+    <title>Edição de Usuário</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="publico/css/bootstrap.min.css" crossorigin="anonymous">
@@ -28,19 +28,44 @@
 
 
     <section>
-        <h1>Cadastro de usuários</h1>
+        <h1>Edição de usuários</h1>
         <hr><br><br>
 
-        <form method="post" action="banco/create.php">
+        <?php
+
+        	include_once 'banco/conexao.php';
+        	
+        	$nome = $_GET['nome'];
+
+        	$querySelect = $conexao->query("select * from usuario where nome='$nome'");
+
+        	while($registros = $querySelect->fetch_assoc()):
+
+                $email = $registros['email'];
+                $senha = $registros['senha'];
+                $nome = $registros['nome'];
+                $cpf = $registros['cpf'];
+                $telefone = $registros['telefone'];
+                $tipo = $registros['tipo'];
+                $endereco = $registros['endereco'];
+                $cidade = $registros['cidade'];
+                $estado = $registros['estado'];
+                $cep = $registros['cep'];
+
+        	endwhile;
+
+        ?>
+
+        <form method="post" action="banco/update.php">
 
         <fieldset>
             <legend>Login:</legend>
 
             Email<br>
-            <input type="email" name="email" class="campo" maxlength="30" required><br>
+            <input type="email" name="email" value="<?php echo $email; ?>" class="campo" maxlength="30" required><br>
 
             Senha<br>
-            <input type="password" name="senha" class="campo" maxlength="30" required><br>
+            <input type="password" name="senha" value="<?php echo $senha; ?>" class="campo" maxlength="30" required><br>
 
         </fieldset>
 
@@ -51,13 +76,13 @@
             <legend>Informações Pessoais:</legend>
 
             Nome<br>
-            <input type="text" name="nome" class="campo" maxlength="30" required autofocus><br>
+            <input type="text" name="nome" value="<?php echo $nome; ?>" class="campo" maxlength="30" required autofocus><br>
 
             CPF<br>
-            <input type="text" name="cpf" class="campo" maxlength="20" required><br>
+            <input type="text" name="cpf" value="<?php echo $cpf; ?>" class="campo" maxlength="20" required><br>
 
             Telefone<br>
-            <input type="text" name="telefone" class="campo" maxlength="20" required><br>
+            <input type="text" name="telefone" value="<?php echo $telefone; ?>" class="campo" maxlength="20" required><br>
 
             Tipo<br>
             <select name="tipo">
@@ -73,14 +98,14 @@
         <legend>Informações Residenciais:</legend>
         
             Endereço<br>
-            <input type="text" name="endereco" class="campo" maxlength="60" required><br>
+            <input type="text" name="endereco" value="<?php echo $endereco; ?>" class="campo" maxlength="60" required><br>
 
             Cidade<br>
-            <input type="text" name="cidade" class="campo" maxlength="20" required><br>
+            <input type="text" name="cidade" value="<?php echo $cidade; ?>" class="campo" maxlength="20" required><br>
             
             Estado<br>
             <select id="inputState" name="estado" class="form-control">
-                <option selected>Escolha...</option>
+                <option selected><?php echo $estado; ?></option>
                 <option>AC</option>
                 <option>AL</option>
                 <option>AP</option>
@@ -112,14 +137,13 @@
             </div>
             
             CEP<br>
-            <input type="text" name="cep" class="campo" maxlength="15" required><br>
+            <input type="text" name="cep" value="<?php echo $cep; ?>" class="campo" maxlength="15" required><br>
 
             </div>
         </div>
     </fieldset>
 
     <hr>
-
 
             <input type="submit" value="Salvar" name="cadastra" class="btn">
 

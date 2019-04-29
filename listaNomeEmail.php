@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nomes e Emails dos usuarios</title>
+    <title>Lista de Usuarios</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="publico/css/bootstrap.min.css" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -16,34 +16,61 @@
 ?>
 
 <body>
-  <hr>
-  <table class="table table-bordered">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col"> <a href="listaNomeEmail.php?sort=nome">Nome</th>
-        <th scope="col">Email</th>
-      </tr>
-    </thead>
-    <?php
-      include_once("conexao.php");/* Estabelece a conexão */
-      $sql = "select * from lojaze.usuarios";
-      if ($_GET['sort'] == 'nome')
-      {
-        $sql .= " ORDER BY nome";
-      }
-      $consulta = mysqli_query($conexao, $sql);
-      while ($usuarios = mysqli_fetch_array($consulta)){
-        $email = $usuarios[0];
-        $nome = $usuarios[2];
+  
+<hr><br>
 
-        echo "<tr scope='row'>";
-        echo "<td>$nome</td>";
-        echo "<td>$email</td>";
-        echo "</tr>";
-      }
-      mysqli_close($conexao);
-    ?>
-  </table>
+
+    <div>
+        
+        <div>
+            
+            <h5>Usuários cadastrados:</h5>
+
+            <table>
+                
+                <thead>
+                    
+                    <th>Nome</th>
+                    <th>Email</th>
+                    
+                </thead>
+
+                <tbody>
+                    
+                    <?php
+
+                        include_once ("conexao.php"); 
+
+                        $querySelect = $conexao->query("select * from usuario");
+
+                        while($registros = $querySelect->fetch_assoc()): 
+
+                       
+                            $nome = $registros['nome'];
+                            $email = $registros['email'];
+                                              
+                            echo "<tr>";
+                            echo "<td>$nome</td><td>$email</td>";
+                            echo "</tr>";
+
+                        endwhile;
+
+                    ?>
+
+                </tbody>
+
+            </table>
+
+
+
+        </div>
+
+    </div>
+
+
+
+<br><hr>
+
 </body>
 
 <?php
