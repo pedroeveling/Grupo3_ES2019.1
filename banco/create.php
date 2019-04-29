@@ -22,6 +22,7 @@ $cep = $_POST['cep'];
 $query = "INSERT INTO usuarios (email, senha, nome, cpf, telefone, tipo, endereco, cidade, estado, cep) VALUES ('".$email."', '".$senha."', '".$nome."', '".$cpf."', '".$telefone."', '".$tipo."', '".$endereco."', '".$cidade."', '".$estado."', '".$cep."')";
 
 $sql = mysqli_query($conexao, $query);
-
+header('Location: ../index.php');
+exit();
 
 ?>

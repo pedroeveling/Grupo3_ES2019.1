@@ -26,9 +26,9 @@
 
             <h5>Usuários cadastrados:</h5>
 
-            <table>
+            <table class="table table-bordered">
 
-                <thead>
+                <thead class="thead-dark">
 
                     <th>Nome</th>
                     <th>Email</th>

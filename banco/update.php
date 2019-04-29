@@ -19,5 +19,6 @@ $cep = $_POST['cep'];
 $query = "UPDATE usuarios SET email='$email', nome='$nome', cpf='$cpf', telefone='$telefone', tipo='$tipo', endereco='$endereco', cidade='$cidade', estado='$estado', cep='$cep' where nome='$nome'";
 
 $sql = mysqli_query($conexao, $query);
-
+header('Location: ../listaUsuarios.php');
+exit();
 ?>

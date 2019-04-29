@@ -16,30 +16,36 @@
 ?>
 
 <body>
-  
+
 <hr><br>
 
 
     <div>
-        
+
         <div>
-            
+
             <h5>Usuários cadastrados:</h5>
 
-            <table>
-                
-                <thead>
-                    
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>CPF</th>
-                    <th>Telefone</th>
-                    <th>Tipo</th>
+            <table class="table table-bordered">
+
+                <thead class="thead-dark">
+
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>CPF</th>
+                  <th>Telefone</th>
+                  <th>Tipo</th>
+                  <th>Endereco</th>
+                  <th>Complemento</th>
+                  <th>Cidade</th>
+                  <th>Estado</th>
+                  <th>CEP</th>
+                  <th colspan=2>Gerenciamento</th>
 
                 </thead>
 
                 <tbody>
-                    
+
                     <?php
 
                         include_once('banco/read.php')

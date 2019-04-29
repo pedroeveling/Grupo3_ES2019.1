@@ -9,6 +9,8 @@ include_once ("conexao.php");
 
 
 	$queryDelete = $conexao->query("delete from lojaze.usuarios where nome='$nome'");
+	header('Location: ../listaUsuarios.php');
+	exit();
 
 
 ?>

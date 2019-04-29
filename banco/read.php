@@ -11,10 +11,14 @@ while($registros = $querySelect->fetch_assoc()):
 	$cpf = $registros['cpf'];
 	$telefone = $registros['telefone'];
 	$tipo = $registros['tipo'];
-
+	$endereco = $registros['endereco'];
+	$complemento = $registros['complemento'];
+	$cidade = $registros['cidade'];
+	$estado = $registros['estado'];
+	$cep = $registros['cep'];
 
 	echo "<tr>";
-	echo "<td>$nome</td><td>$email</td><td>$cpf</td><td>$telefone</td><td>$tipo</td><td><a href='edita.php?nome=$nome'><i>edit</i></td>   <td><a href='banco/delete.php?nome=$nome'><i>delete</i></td>";
+	echo "<td>$nome</td><td>$email</td><td>$cpf</td><td>$telefone</td><td>$tipo</td><td>$endereco</td><td>$complemento</td><td>$cidade</td><td>$estado</td><td>$cep</td><td><a href='edita.php?nome=$nome'><i>Editar</i></td>   <td><a href='banco/delete.php?nome=$nome'><i>Excluir</i></td>";
 	echo "</tr>";
 
 endwhile;
