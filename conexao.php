@@ -1,6 +1,6 @@
 <?php
 
-$conexao = mysqli_connect("localhost", "root", "", "usuarios");/* Estabelece a conexão */
+$conexao = mysqli_connect("127.0.0.1", "root", "", "lojaze");/* Estabelece a conexão */
 
 if(!$conexao)
 {

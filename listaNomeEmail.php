@@ -16,39 +16,39 @@
 ?>
 
 <body>
-  
+
 <hr><br>
 
 
     <div>
-        
+
         <div>
-            
+
             <h5>Usuários cadastrados:</h5>
 
             <table>
-                
+
                 <thead>
-                    
+
                     <th>Nome</th>
                     <th>Email</th>
-                    
+
                 </thead>
 
                 <tbody>
-                    
+
                     <?php
 
-                        include_once ("conexao.php"); 
+                        include_once ("conexao.php");
 
-                        $querySelect = $conexao->query("select * from usuario");
+                        $querySelect = $conexao->query("select * from lojaze.usuarios");
 
-                        while($registros = $querySelect->fetch_assoc()): 
+                        while($registros = $querySelect->fetch_assoc()):
 
-                       
+
                             $nome = $registros['nome'];
                             $email = $registros['email'];
-                                              
+
                             echo "<tr>";
                             echo "<td>$nome</td><td>$email</td>";
                             echo "</tr>";

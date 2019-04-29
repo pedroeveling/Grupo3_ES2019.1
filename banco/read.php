@@ -1,10 +1,10 @@
 <?php
 
-include_once ("conexao.php"); 
+include_once ("conexao.php");
 
-$querySelect = $conexao->query("select * from usuario");
+$querySelect = $conexao->query("select * from lojaze.usuarios");
 
-while($registros = $querySelect->fetch_assoc()): 
+while($registros = $querySelect->fetch_assoc()):
 
 	$nome = $registros['nome'];
 	$email = $registros['email'];
